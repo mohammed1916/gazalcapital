@@ -22,7 +22,7 @@ export default function Products() {
     }
 
     return (
-        <div id='#Completed'>
+        <div id='#Products'>
             <Box
                 px={{ xs: 3, sm: 10 }}
                 py={{ xs: 5, sm: 10 }}

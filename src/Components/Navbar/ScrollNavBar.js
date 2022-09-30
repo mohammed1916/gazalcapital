@@ -5,16 +5,16 @@ import Container from '@mui/material/Container';
 import { emphasize, styled } from '@mui/material/styles';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Chip from '@mui/material/Chip';
-import ConstructionIcon from '@mui/icons-material/Construction';
-import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
+import Person4Icon from '@mui/icons-material/Person4';
+import BackpackIcon from '@mui/icons-material/Backpack';
 import { Link } from 'react-scroll'
 
 
-const pages = ['Ongoing Projects', 'Completed Projects'];
-const links = ["#Ongoing", "#Completed"]
+const pages = ['Products', 'Contact Us'];
+const links = ["#Products", "#Contact"]
 const icons = [
-    <QueryBuilderIcon fontSize="small" />,
-    <ConstructionIcon fontSize="small" />,
+    <BackpackIcon fontSize="small" />,
+    <Person4Icon fontSize="small" />,
 ]
 
 const ScrollNavBar = () => {

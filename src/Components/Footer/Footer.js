@@ -32,8 +32,8 @@ export default function Footer() {
                     <Grid item xs={12} sm={6} pb={{ xs: 2, sm: 4 }}>
                         <Box borderBottom={2}>Website</Box>
                         <Box pt={{ xs: 2, sm: 4 }}>
-                            <Link href="/site/Momin%20Elan" color="inherit" underline="hover">
-                                Ongoing Projects
+                            <Link href="/site/The%20Pink%Dove" color="inherit" underline="hover">
+                                The Pink Dove
                             </Link>
                         </Box>
                         <Box pt={{ xs: 2, sm: 4 }}>
@@ -42,14 +42,14 @@ export default function Footer() {
                             </Link>
                         </Box>
                         <Box pt={{ xs: 2, sm: 4 }}>
-                            <Link href="/about" color="inherit" underline="hover">
-                                About Us
+                            <Link href="/team" color="inherit" underline="hover">
+                                Team
                             </Link>
                         </Box>
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <Box borderBottom={2}>Get In Touch</Box>
-                        <Box pt={{ xs: 2, sm: 4 }}>
+                        {/* <Box pt={{ xs: 2, sm: 4 }}>
                             <div>
                                 <BusinessRoundedIcon />
                                 <span className="pl-3 p-1 font-semibold">OFFICE ADDRESS:</span>
@@ -57,28 +57,27 @@ export default function Footer() {
                             <div className="pl-9">
                                 <span>69, 7th Cross, Hennur Main Road, Lingarajapuram, Bangalore 560051</span>
                             </div>
-                        </Box>
+                        </Box> */}
                         <Box pt={{ xs: 2, sm: 4 }}>
                             <div>
                                 <CallRoundedIcon />
-                                <span className="pl-3 p-1">+91 98450 41161</span><br />
-                            </div>
-                            <div>
-                                <CallRoundedIcon />
-                                <span className="pl-3 p-1">+91 99453 16717</span><br />
-                            </div>
-                            <div>
-                                <CallRoundedIcon />
-                                <span className="pl-3 p-1">+91 90943 64248</span><br />
+                                <span className="pl-3 p-1">+91 77608 51058</span><br />
                             </div>
                         </Box>
                         <Box pt={{ xs: 2, sm: 4 }} >
                             <div>
                                 <EmailRoundedIcon />
-                                <span className="pl-3 p-1 font-semibold">PRIMARY EMAIL:</span>
+                                <span className="pl-3 p-1 font-semibold">Gazal Capital:</span>
                             </div>
                             <div className="pl-9">
-                                <span >momindevelopers123@gmail.com</span>
+                                <span >gazalcapitalgc@gmail.com</span>
+                            </div>
+                            <div>
+                                <EmailRoundedIcon />
+                                <span className="pl-3 p-1 font-semibold">The Pink Dove:</span>
+                            </div>
+                            <div className="pl-9">
+                                <span >thepinkdovegc@gmail.com</span>
                             </div>
                         </Box>
                     </Grid>

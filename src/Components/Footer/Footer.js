@@ -42,8 +42,8 @@ export default function Footer() {
                             </Link>
                         </Box>
                         <Box pt={{ xs: 2, sm: 4 }}>
-                            <Link href="/team" color="inherit" underline="hover">
-                                Team
+                            <Link href="/contact" color="inherit" underline="hover">
+                                contact
                             </Link>
                         </Box>
                     </Grid>

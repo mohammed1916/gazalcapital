@@ -57,5 +57,5 @@ export const icons = {
     "site": require("../img/logo/PinkNavLogo.png"),
 
     "": require("../img/logo/GazalCapitalNavLogo.png"),
-    "team": require("../img/logo/GazalCapitalNavLogo.png"),
+    "contact": require("../img/logo/GazalCapitalNavLogo.png"),
 }

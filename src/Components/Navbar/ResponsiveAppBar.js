@@ -11,8 +11,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
-import gazalLogo from '../../img/logo/GazalLogoOnly.jpg'
-import { pages } from '../../store/pages.js'
+import gazalLogo from '../../img/logo/GazalCapitalNavLogo.png'
+import { pages } from '../../store/pages.js';
+import { icons } from '../../store/pages.js';
 
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,9 +27,13 @@ const ResponsiveAppBar = () => {
     var s = window.location.pathname.split('/');
     var siteURLName = s[1];
     const [pageObj, setpageObj] = React.useState(pages[siteURLName]);
+    const [iconObj, seticonObj] = React.useState(icons[siteURLName]);
     React.useEffect(() => {
         setpageObj(pages[siteURLName]);
+        seticonObj(icons[siteURLName])
     }, [window.location.pathname]);
+    console.log(iconObj);
+    console.log(gazalLogo);
 
     return (
         <AppBar position="static" variant='outlined'
@@ -84,14 +89,15 @@ const ResponsiveAppBar = () => {
                             pageObj.map((page, index) => (
                                 <Link
                                     to={page["path"]}
-                                    className="shadow-lg rounded-lg mr-2 bg-gray-500 transition hover:bg-gray-700 hover:-translate-y-1 duration-[2500]">
+                                    className="shadow-lg rounded-lg mr-2 transition hover:bg-gray-700   hover:-translate-y-1 duration-[2500]">
                                     <Button
                                         key={page + index}
                                         onClick={handleCloseNavMenu}
-                                        sx={{ color: 'white' }}
+                                        className="hover:fill-current hover:text-white"
                                     >
-                                        {page["icon"]}
-                                        <div className="p-1" />
+                                        {/* {page["icon"]} */}
+                                        {/* <div className="p-1" /> */}
+
                                         {page["label"]}
                                     </Button>
                                 </Link>
@@ -99,7 +105,7 @@ const ResponsiveAppBar = () => {
                         }
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
-                        <img alt="Icon" src={gazalLogo} className="h-6" />
+                        <img alt="Icon" src={iconObj} className="h-9" />
                     </Box>
                 </Toolbar>
             </Container>

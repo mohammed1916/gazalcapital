@@ -1,6 +1,6 @@
 import React from 'react';
-import { carousal } from '../../store/carousal.js.js'
-import CarousalComponent from './CarousalComponent.jsx';
+import { carousal } from '../../store/carousal.js'
+import CarousalComponent from './CarousalComponent';
 
 
 function getURLUsername(siteName) {

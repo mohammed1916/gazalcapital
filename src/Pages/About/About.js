@@ -2,8 +2,8 @@ import MdPhone from '@mui/icons-material/Phone';
 import ResponsiveAppBar from '../../Components/Navbar/ResponsiveAppBar';
 import Box from '@mui/material/Box'
 import decoration1 from '../../img/Assets/3372216.jpg'
-import decoration2 from '../../img/Assets/5154267.jpg'
-import decoration3 from '../../img/Assets/20945469.jpg'
+import decoration3 from '../../img/Assets/5154267.jpg'
+import decoration2 from '../../img/Assets/20945469.jpg'
 
 export default function About() {
     return (

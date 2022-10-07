@@ -86,7 +86,14 @@ export default function Footer() {
                 <Divider sx={{
                     borderColor: "#090081",
                 }} />
-                <Typography textAlign="center" color={'white'} pt={{ xs: 1, sm: 2 }}>Copyright &copy; {new Date().getFullYear()} Gazal Capital</Typography>
+                <Typography textAlign="center" color={'white'} pt={{ xs: 1, sm: 2 }}>Copyright &copy; {new Date().getFullYear()} Gazal Capital  |
+                    <Link href="/credits" color="inherit" underline="hover" >
+                        <span className="p-1">
+                            Credits
+                        </span>
+                    </Link>
+                </Typography>
+
             </Container>
         </Box >
     );

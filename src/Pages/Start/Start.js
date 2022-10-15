@@ -10,7 +10,6 @@ import Form from '../../Components/Forms/Form';
 export default function Start() {
     return (
         < >
-            <MainAppBar />
             <ResponsiveAppBar />
             <ScrollNavBar />
             <Home />

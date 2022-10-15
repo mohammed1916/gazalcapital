@@ -64,7 +64,7 @@ export const pages = {
 export const icons = {
     "thepinkdove": require("../img/logo/PinkNavLogo.png"),
     "site": require("../img/logo/PinkNavLogo.png"),
-    "credits": require("../img/logo/GazalCapitalNavLogo.png"),
-    "": require("../img/logo/GazalCapitalNavLogo.png"),
-    "contact": require("../img/logo/GazalCapitalNavLogo.png"),
+    "credits": require("../img/logo/GazalCapitalNavLogoLeft.png"),
+    "": require("../img/logo/GazalCapitalNavLogoLeft.png"),
+    "contact": require("../img/logo/GazalCapitalNavLogoLeft.png"),
 }

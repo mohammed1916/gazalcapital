@@ -8,9 +8,9 @@ export default function Home() {
     return (
         <div id="#Home">
             <Box
-                mx={{ xs: 3, sm: 10 }}
-                my={{ xs: 2, sm: 5 }}
-                bgcolor={'white'}
+                px={{ xs: 3, sm: 10 }}
+                py={{ xs: 2, sm: 5 }}
+                bgcolor={'black'}
                 color={'white'} >
                 <Container sx={{ width: '100%' }}>
                     <Box className="rounded-2xl" display={'flex'} flexDirection={'column'} flexWrap={'wrap'} alignItems={'center'} justifyContent='center' margin={'10px'} boxShadow={5} padding={{ xs: 1, sm: 2 }} bgcolor={'#fed812'}>

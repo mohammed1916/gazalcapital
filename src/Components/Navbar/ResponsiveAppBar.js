@@ -11,7 +11,6 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
-import gazalLogo from '../../img/logo/GazalCapitalNavLogo.png'
 import { pages } from '../../store/pages.js';
 import { icons } from '../../store/pages.js';
 
@@ -33,20 +32,22 @@ const ResponsiveAppBar = () => {
         seticonObj(icons[siteURLName])
     }, [window.location.pathname]);
     console.log(iconObj);
-    console.log(gazalLogo);
 
     return (
         <AppBar position="static" variant='outlined'
             sx={{
-                bgcolor: '#0101',
-                color: 'black',
+                bgcolor: 'black',
+                color: '#FFAA22',
             }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
+                    <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }} >
+                        <img alt="Icon" src={iconObj} className="h-9" />
+                    </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
-                            aria-label="account of current user"
+                            aria-label="Open Nav"
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
@@ -94,6 +95,9 @@ const ResponsiveAppBar = () => {
                                         key={page + index}
                                         onClick={handleCloseNavMenu}
                                         className="hover:fill-current hover:text-white"
+                                        sx={{
+                                            color: '#FFAA22',
+                                        }}
                                     >
                                         {/* {page["icon"]} */}
                                         {/* <div className="p-1" /> */}
@@ -104,7 +108,7 @@ const ResponsiveAppBar = () => {
                             ))
                         }
                     </Box>
-                    <Box sx={{ flexGrow: 0 }}>
+                    <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }} justifyContent={{ xs: 'center' }} >
                         <img alt="Icon" src={iconObj} className="h-9" />
                     </Box>
                 </Toolbar>

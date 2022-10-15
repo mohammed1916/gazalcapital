@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 import { pages } from '../../store/pages.js';
 import { icons } from '../../store/pages.js';
+import { colors } from '../../store/pages.js';
 
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -27,6 +28,7 @@ const ResponsiveAppBar = () => {
     var siteURLName = s[1];
     const [pageObj, setpageObj] = React.useState(pages[siteURLName]);
     const [iconObj, seticonObj] = React.useState(icons[siteURLName]);
+    const [colorsObj, setcolorsObj] = React.useState(colors[siteURLName]);
     React.useEffect(() => {
         setpageObj(pages[siteURLName]);
         seticonObj(icons[siteURLName])
@@ -96,7 +98,7 @@ const ResponsiveAppBar = () => {
                                         onClick={handleCloseNavMenu}
                                         className="hover:fill-current hover:text-white"
                                         sx={{
-                                            color: '#FFAA22',
+                                            color: colorsObj,
                                         }}
                                     >
                                         {/* {page["icon"]} */}

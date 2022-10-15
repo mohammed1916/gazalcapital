@@ -23,7 +23,7 @@ export default function Site() {
     return (
         <>
             <ResponsiveAppBar />
-            <Typography textAlign="center" fontFamily={'Righteous'} variant={'h3'} color={'#882e34ff'} pt={{ xs: 0.5, sm: 1 }}>{siteName}</Typography>
+            <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} fontWeight='bold' variant={'h3'} color={'#882e34ff'} pt={{ xs: 0.5, sm: 1 }}>{siteName}</Typography>
             <Typography textAlign="center" fontFamily={'Righteous'} variant={'h5'} color={'black'} pt={{ xs: 0.5, sm: 2 }}>Product Overview</Typography>
             <div className="bg-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

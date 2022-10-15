@@ -33,7 +33,6 @@ const ResponsiveAppBar = () => {
         setpageObj(pages[siteURLName]);
         seticonObj(icons[siteURLName])
     }, [window.location.pathname]);
-    console.log(iconObj);
 
     return (
         <AppBar position="static" variant='outlined'

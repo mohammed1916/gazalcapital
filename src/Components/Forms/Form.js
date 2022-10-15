@@ -1,11 +1,20 @@
-import Container from '@mui/material/Container'
+
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box'
-import decoration from '../../img/logo/GazalLogoOnly.jpg'
+import { colors } from '../../store/pages.js';
 /* fontSize={{ xs: '20px', sm: '26px', md: '34px', lg: '46px' }} */
 
 
 export default function Form() {
+    var s = window.location.pathname.split('/');
+    var siteURLName = s[1];
+    const [colorsObj, setcolorsObj] = React.useState(colors[siteURLName]);
+    React.useEffect(() => {
+        setcolorsObj(colors[siteURLName]);
+    }, [window.location.pathname]);
+    console.log(colorsObj);
     return (
         <div id="#Form">
             <Box
@@ -14,8 +23,9 @@ export default function Form() {
                 bgcolor={'white'}>
                 <Container sx={{ width: '100%' }}>
                     <Box className="rounded-2xl" display={'flex'} flexDirection={'column'} flexWrap={'wrap'} alignItems={'center'} justifyContent='center' margin={'10px'} boxShadow={5} padding={{ xs: 1, sm: 2 }} >
-                        <div class="text-yellow-500 font-extrabold text-5xl">
-                            Contact Us
+                        <div >
+                            <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'sans-serif'} fontWeight={'bold'} color={colorsObj} variant="h3" pt={{ xs: 1, sm: 2 }}>Contact Us</Typography>
+
                         </div>
                         {/* <div sx={{ bgcolor: 'black', width: '75%', margin: '5px' }} >
                         </div>
@@ -120,8 +130,11 @@ export default function Form() {
                                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                         />
                                     </div>
-                                    <button class="text-orange-300 font-extrabold text-2xl bg-slate-700 p-3 rounded-lg transition delay-100 hover:-translate-y-1 hover:bg-slate-900 duration-300">
-                                        Submit
+
+                                    <button class="font-extrabold text-2xl bg-slate-700 p-3 rounded-lg transition delay-100 hover:-translate-y-1 hover:bg-slate-900 duration-300">
+                                        <Box color={colorsObj}>
+                                            Submit
+                                        </Box>
                                     </button>
                                 </form>
                             </div>

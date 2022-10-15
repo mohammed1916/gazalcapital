@@ -10,8 +10,8 @@ import BackpackIcon from '@mui/icons-material/Backpack';
 import { Link } from 'react-scroll'
 
 
-const pages = ['Products', 'Query'];
-const links = ["#Products", "#Contact"]
+const pages = ['Brand', 'Query'];
+const links = ["#Home", "#Form"]
 const icons = [
     <BackpackIcon fontSize="small" />,
     <Person4Icon fontSize="small" />,

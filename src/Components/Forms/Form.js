@@ -1,27 +1,39 @@
-import Container from '@mui/material/Container'
+
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box'
-import decoration from '../../img/logo/GazalLogoOnly.jpg'
+import { colors } from '../../store/pages.js';
 /* fontSize={{ xs: '20px', sm: '26px', md: '34px', lg: '46px' }} */
 
 
 export default function Form() {
-    function formatPhone(ph) {
-        ph.replace("/([0-9]{3})/", "\x01 ");
-        return ph;
-    }
+    var s = window.location.pathname.split('/');
+    var siteURLName = s[1];
+    const [colorsObj, setcolorsObj] = React.useState(colors[siteURLName]);
+    React.useEffect(() => {
+        setcolorsObj(colors[siteURLName]);
+    }, [window.location.pathname]);
+    console.log(colorsObj);
     return (
         <div id="#Form">
             <Box
                 mx={{ xs: 3, sm: 10 }}
                 my={{ xs: 2, sm: 5 }}
-                bgcolor={'white'}
-                color={'white'} >
+                bgcolor={'white'}>
                 <Container sx={{ width: '100%' }}>
-                    <Box className="rounded-2xl" display={'flex'} flexDirection={'column'} flexWrap={'wrap'} alignItems={'center'} justifyContent='center' margin={'10px'} boxShadow={5} padding={{ xs: 1, sm: 2 }} bgcolor={'#fed812'}>
+                    <Box className="rounded-2xl" display={'flex'} flexDirection={'column'} flexWrap={'wrap'} alignItems={'center'} justifyContent='center' margin={'10px'} boxShadow={5} padding={{ xs: 1, sm: 2 }} >
+                        <div >
+                            <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'sans-serif'} fontWeight={'bold'} color={colorsObj} variant="h3" pt={{ xs: 1, sm: 2 }}>Contact Us</Typography>
+
+                        </div>
+                        {/* <div sx={{ bgcolor: 'black', width: '75%', margin: '5px' }} >
+                        </div>
+                        <hr color={'black'} bgcolor={'black'} /> */}
                         <div class="flex items-center justify-center p-12">
                             <div class="mx-auto w-full max-w-[550px]">
-                                <form action="https://formbold.com/s/FORM_ID" method="POST">
+                                <form id="gform" className="contact100-form validate-form" method="post"
+                                    action="https://script.google.com/macros/s/AKfycbxx0wnHYD8HT7EjtC-FYMRdisVpW-VOYpY7BBeX/exec">
                                     <div class="-mx-3 flex flex-wrap">
                                         <div class="w-full px-3 sm:w-1/2">
                                             <div class="mb-5">
@@ -36,7 +48,7 @@ export default function Form() {
                                                     name="fName"
                                                     id="fName"
                                                     placeholder="First Name"
-                                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                                 />
                                             </div>
                                         </div>
@@ -53,7 +65,7 @@ export default function Form() {
                                                     name="lName"
                                                     id="lName"
                                                     placeholder="Last Name"
-                                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                                 />
                                             </div>
                                         </div>
@@ -69,10 +81,8 @@ export default function Form() {
                                             type="tel"
                                             name="phone"
                                             id="phone"
-                                            pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12"
-                                            onchange="value=formatPhone(value);"
                                             placeholder="Enter your phone number"
-                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                         />
                                     </div>
                                     <div class="mb-5">
@@ -87,7 +97,7 @@ export default function Form() {
                                             name="email"
                                             id="email"
                                             placeholder="Enter your email"
-                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                         />
                                     </div>
                                     <div class="mb-5">
@@ -98,13 +108,34 @@ export default function Form() {
                                             Delivery Address
                                         </label>
                                         <input
-                                            type="address"
+                                            type="textarea"
                                             name="address"
                                             id="address"
                                             placeholder="Enter your delivery address"
-                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                         />
                                     </div>
+                                    <div class="mb-5">
+                                        <label
+                                            for="address"
+                                            class="mb-3 block text-base font-medium text-[#07074D]"
+                                        >
+                                            Any Queries
+                                        </label>
+                                        <input
+                                            type="textarea"
+                                            name="message"
+                                            id="message"
+                                            placeholder="Enter your query"
+                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                        />
+                                    </div>
+
+                                    <button class="font-extrabold text-2xl bg-slate-700 p-3 rounded-lg transition delay-100 hover:-translate-y-1 hover:bg-slate-900 duration-300">
+                                        <Box color={colorsObj}>
+                                            Submit
+                                        </Box>
+                                    </button>
                                 </form>
                             </div>
                         </div>

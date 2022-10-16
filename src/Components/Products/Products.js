@@ -29,7 +29,7 @@ export default function Products() {
                 bgcolor={'white'}
                 color={'white'} >
                 <Container sx={{ width: '100%' }}>
-                    <Typography textAlign="center" fontFamily={'Righteous'} fontSize={'34px'} color={'orange'} pt={{ xs: 1, sm: 2 }}>Our Products</Typography>
+                    <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} fontWeight='bold' fontSize={'36px'} color={'#FF88AA'} pt={{ xs: 1, sm: 2 }}>Our Products</Typography>
                     {/* <Typography textAlign="center" fontFamily={'Righteous'} fontSize={'44px'} color={'#ddd'} pt={{ xs: 1, sm: 2 }}>Completed</Typography> */}
                     <Box display={'flex'} flexWrap={'wrap'} justifyContent='space-evenly' borderRadius={'20px'} padding={'10px'}>
                         {cards.map((cardImg, index) => (

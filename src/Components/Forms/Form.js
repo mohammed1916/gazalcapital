@@ -8,6 +8,19 @@ import { colors } from '../../store/pages.js';
 
 
 export default function Form() {
+    const formRef = React.useRef(null)
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbzJxMMjS-ryN8o2PFbFIQXdH2KejLiE5-KZ-KV1ET4n7Z-qSUcsnNhYAK5UEFQQ-Fau/exec"
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        fetch(scriptUrl, { method: 'POST', body: new FormData(formRef.current) })
+            .then(res => {
+                console.log("SUCCESSFULLY SUBMITTED")
+            })
+            .catch(err => console.log(err))
+    }
+
     var s = window.location.pathname.split('/');
     var siteURLName = s[1];
     const [colorsObj, setcolorsObj] = React.useState(colors[siteURLName]);
@@ -32,8 +45,8 @@ export default function Form() {
                         <hr color={'black'} bgcolor={'black'} /> */}
                         <div class="flex items-center justify-center p-12">
                             <div class="mx-auto w-full max-w-[550px]">
-                                <form id="gform" className="contact100-form validate-form" method="post"
-                                    action="https://script.google.com/macros/s/AKfycbxx0wnHYD8HT7EjtC-FYMRdisVpW-VOYpY7BBeX/exec">
+                                <form id="gform" method="post"
+                                    action="https://script.google.com/macros/s/AKfycbzJxMMjS-ryN8o2PFbFIQXdH2KejLiE5-KZ-KV1ET4n7Z-qSUcsnNhYAK5UEFQQ-Fau/exec">
                                     <div class="-mx-3 flex flex-wrap">
                                         <div class="w-full px-3 sm:w-1/2">
                                             <div class="mb-5">
@@ -137,6 +150,20 @@ export default function Form() {
                                         </Box>
                                     </button>
                                 </form>
+                                {/* <form method="post" onSubmit={handleSubmit} ref={formRef} name="google-sheet">
+                                    <div className="form-style">
+                                        <input type="" name="name" placeholder='Your Name *' />
+                                    </div>
+                                    <div className="form-style">
+                                        <input type="email" name="email" placeholder='Your Email *' />
+                                    </div>
+                                    <div className="form-style">
+                                        <input type="number" name="phone" placeholder='Your Phone *' />
+                                    </div>
+                                    <div className="form-style">
+                                        <input type="submit" name="submit" value="Login" />
+                                    </div>
+                                </form> */}
                             </div>
                         </div>
                     </Box>

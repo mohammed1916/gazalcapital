@@ -46,10 +46,9 @@ const ScrollNavBar = () => {
                 <Toolbar disableGutters variant='dense'>
                     <Breadcrumbs separator="›" aria-label="breadcrumb">
                         {pages.map((page, index) => (
-                            <Link to={links[index]} smooth={true} duration={500}>
+                            <Link key={page + index} to={links[index]} smooth={true} duration={500}>
                                 <StyledBreadcrumb
                                     key={page}
-                                    component="a"
                                     label={page}
                                     icon={icons[index]}
                                 />

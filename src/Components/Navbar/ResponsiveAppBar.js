@@ -35,7 +35,7 @@ const ResponsiveAppBar = () => {
     }, [window.location.pathname]);
 
     return (
-        <AppBar position="static" variant='outlined'
+        <AppBar position="static"
             sx={{
                 bgcolor: 'black',
                 color: '#FFAA22',
@@ -90,10 +90,10 @@ const ResponsiveAppBar = () => {
                         {
                             pageObj.map((page, index) => (
                                 <Link
+                                    key={page + index}
                                     to={page["path"]}
                                     className="shadow-lg rounded-lg mr-2 transition hover:bg-gray-700   hover:-translate-y-1 duration-[2500]">
                                     <Button
-                                        key={page + index}
                                         onClick={handleCloseNavMenu}
                                         className="hover:fill-current hover:text-white"
                                         sx={{

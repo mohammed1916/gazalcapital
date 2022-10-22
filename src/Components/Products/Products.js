@@ -26,14 +26,14 @@ export default function Products() {
             <Box
                 px={{ xs: 3, sm: 10 }}
                 py={{ xs: 5, sm: 10 }}
-                bgcolor={'white'}
+                bgcolor={'#59032d'}
                 color={'white'} >
                 <Container sx={{ width: '100%' }}>
-                    <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} fontWeight='bold' fontSize={'36px'} color={'#FF88AA'} pt={{ xs: 1, sm: 2 }}>Our Products</Typography>
+                    <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} fontWeight='bold' fontSize={'36px'} color={'#white'} pt={{ xs: 1, sm: 2 }} pb={{ xs: 1, sm: 2 }}>OUR PRODUCTS</Typography>
                     {/* <Typography textAlign="center" fontFamily={'Righteous'} fontSize={'44px'} color={'#ddd'} pt={{ xs: 1, sm: 2 }}>Completed</Typography> */}
-                    <Box display={'flex'} flexWrap={'wrap'} justifyContent='space-evenly' borderRadius={'20px'} padding={'10px'}>
+                    <Box display={'flex'} flexWrap={'wrap'} bgcolor={'#000'} justifyContent='space-evenly' borderRadius={'20px'} padding={'30px'} boxShadow={'0px 2px 30px #c30164,0px 5px 10px rgba(0,0,0)'}>
                         {cards.map((cardImg, index) => (
-                            <Card sx={{ maxWidth: 310, padding: '10px', margin: '20px', ":hover": "boxShadow: 0 15px 70px -12px rgba(0,0,0,0.3)", boxShadow: 6 }} onClick={() => nav(cardName[index])} className="transition ease-in-out delay-150 hover:-translate-y-3 hover:scale-110 hover:bg-black hover:shadow-fuchsia-900 hover:shadow-xl hover:text-white duration-[2500]">
+                            <Card key={cardImg + index} sx={{ maxWidth: 310, padding: '10px', margin: '20px', ":hover": "boxShadow: 0 15px 70px -12px rgba(0,0,0,0.3)", boxShadow: 6 }} onClick={() => nav(cardName[index])} className="transition ease-in-out delay-150 hover:-translate-y-3 hover:scale-110 hover:bg-pink-900 hover:shadow-pink-900 hover:text-white duration-[2500]">
                                 <CardActionArea>
                                     <CardMedia
                                         component="img"
@@ -43,7 +43,7 @@ export default function Products() {
                                         <Typography gutterBottom variant="h5" component="div" textAlign={'center'}>
                                             {cardName[index]}
                                         </Typography>
-                                        <Typography variant="body2" className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
+                                        <Typography variant="body2" className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-600  relative inline-block">
                                             <span className="relative text-white">
                                                 {cardAddress[index]}
                                             </span>

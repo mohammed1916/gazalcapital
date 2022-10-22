@@ -8,13 +8,14 @@ import { colors } from '../../store/pages.js';
 
 
 export default function Form() {
+
+
     var s = window.location.pathname.split('/');
     var siteURLName = s[1];
     const [colorsObj, setcolorsObj] = React.useState(colors[siteURLName]);
     React.useEffect(() => {
         setcolorsObj(colors[siteURLName]);
     }, [window.location.pathname]);
-    console.log(colorsObj);
     return (
         <div id="#Form">
             <Box
@@ -30,16 +31,16 @@ export default function Form() {
                         {/* <div sx={{ bgcolor: 'black', width: '75%', margin: '5px' }} >
                         </div>
                         <hr color={'black'} bgcolor={'black'} /> */}
-                        <div class="flex items-center justify-center p-12">
-                            <div class="mx-auto w-full max-w-[550px]">
-                                <form id="gform" className="contact100-form validate-form" method="post"
-                                    action="https://script.google.com/macros/s/AKfycbxx0wnHYD8HT7EjtC-FYMRdisVpW-VOYpY7BBeX/exec">
-                                    <div class="-mx-3 flex flex-wrap">
-                                        <div class="w-full px-3 sm:w-1/2">
-                                            <div class="mb-5">
+                        <div className="flex items-center justify-center p-12">
+                            <div className="mx-auto w-full max-w-[550px]">
+                                <form method="post"
+                                    action="https://formsubmit.co/65a91a5e604fdb62c49d62a810ee2b35">
+                                    <div className="-mx-3 flex flex-wrap">
+                                        <div className="w-full px-3 sm:w-1/2">
+                                            <div className="mb-5">
                                                 <label
-                                                    for="fName"
-                                                    class="mb-3 block text-base font-medium text-[#07074D]"
+                                                    forname="fName"
+                                                    className="mb-3 block text-base font-medium text-[#07074D]"
                                                 >
                                                     First Name
                                                 </label>
@@ -48,15 +49,15 @@ export default function Form() {
                                                     name="fName"
                                                     id="fName"
                                                     placeholder="First Name"
-                                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                                    className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                                 />
                                             </div>
                                         </div>
-                                        <div class="w-full px-3 sm:w-1/2">
-                                            <div class="mb-5">
+                                        <div className="w-full px-3 sm:w-1/2">
+                                            <div className="mb-5">
                                                 <label
-                                                    for="lName"
-                                                    class="mb-3 block text-base font-medium text-[#07074D]"
+                                                    forname="lName"
+                                                    className="mb-3 block text-base font-medium text-[#07074D]"
                                                 >
                                                     Last Name
                                                 </label>
@@ -65,15 +66,15 @@ export default function Form() {
                                                     name="lName"
                                                     id="lName"
                                                     placeholder="Last Name"
-                                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                                    className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                                 />
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="mb-5">
+                                    <div className="mb-5">
                                         <label
-                                            for="phone"
-                                            class="mb-3 block text-base font-medium text-[#07074D]"
+                                            forname="phone"
+                                            className="mb-3 block text-base font-medium text-[#07074D]"
                                         >
                                             Phone Number
                                         </label>
@@ -82,13 +83,13 @@ export default function Form() {
                                             name="phone"
                                             id="phone"
                                             placeholder="Enter your phone number"
-                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                         />
                                     </div>
-                                    <div class="mb-5">
+                                    <div className="mb-5">
                                         <label
-                                            for="email"
-                                            class="mb-3 block text-base font-medium text-[#07074D]"
+                                            forname="email"
+                                            className="mb-3 block text-base font-medium text-[#07074D]"
                                         >
                                             Email Address
                                         </label>
@@ -97,13 +98,13 @@ export default function Form() {
                                             name="email"
                                             id="email"
                                             placeholder="Enter your email"
-                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                         />
                                     </div>
-                                    <div class="mb-5">
+                                    <div className="mb-5">
                                         <label
-                                            for="address"
-                                            class="mb-3 block text-base font-medium text-[#07074D]"
+                                            forname="address"
+                                            className="mb-3 block text-base font-medium text-[#07074D]"
                                         >
                                             Delivery Address
                                         </label>
@@ -112,13 +113,13 @@ export default function Form() {
                                             name="address"
                                             id="address"
                                             placeholder="Enter your delivery address"
-                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                         />
                                     </div>
-                                    <div class="mb-5">
+                                    <div className="mb-5">
                                         <label
-                                            for="address"
-                                            class="mb-3 block text-base font-medium text-[#07074D]"
+                                            forname="address"
+                                            className="mb-3 block text-base font-medium text-[#07074D]"
                                         >
                                             Any Queries
                                         </label>
@@ -127,16 +128,29 @@ export default function Form() {
                                             name="message"
                                             id="message"
                                             placeholder="Enter your query"
-                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
                                         />
                                     </div>
-
-                                    <button class="font-extrabold text-2xl bg-slate-700 p-3 rounded-lg transition delay-100 hover:-translate-y-1 hover:bg-slate-900 duration-300">
-                                        <Box color={colorsObj}>
+                                    <Box color={colorsObj}>
+                                        <button type="submit" className="font-extrabold text-2xl bg-slate-700 p-3 rounded-lg transition delay-100 hover:-translate-y-1 hover:bg-slate-900 duration-300">
                                             Submit
-                                        </Box>
-                                    </button>
+                                        </button>
+                                    </Box>
                                 </form>
+                                {/* <form method="post" onSubmit={handleSubmit} ref={formRef} name="google-sheet">
+                                    <div className="form-style">
+                                        <input type="" name="name" placeholder='Your Name *' />
+                                    </div>
+                                    <div className="form-style">
+                                        <input type="email" name="email" placeholder='Your Email *' />
+                                    </div>
+                                    <div className="form-style">
+                                        <input type="number" name="phone" placeholder='Your Phone *' />
+                                    </div>
+                                    <div className="form-style">
+                                        <input type="submit" name="submit" value="Login" />
+                                    </div>
+                                </form> */}
                             </div>
                         </div>
                     </Box>

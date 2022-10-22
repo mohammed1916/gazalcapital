@@ -18,15 +18,15 @@ export default function Footer() {
         <Box
             px={{ xs: 3, sm: 10 }}
             py={{ xs: 5, sm: 10 }}
-            bgcolor={'#050522'}
+            bgcolor={'#59032d'}
             color={'white'} >
             <Container sx={{ width: '100%' }}>
                 <Divider sx={{
                     "&::before, &::after": {
-                        borderColor: "#090081",
+                        borderColor: '#9c0a51',
                     },
                 }} pt={{ xs: 1, sm: 2 }}><Chip style={{
-                    color: "white", backgroundColor: "#090081"
+                    color: "white", backgroundColor: "#9c0a51"
                 }} label="Gazal Capital" /></Divider>
                 <Grid container spacing={5} pt={{ xs: 2, sm: 4 }} pb={{ xs: 2, sm: 4 }}>
                     <Grid item xs={12} sm={6} pb={{ xs: 2, sm: 4 }}>
@@ -84,7 +84,7 @@ export default function Footer() {
 
                 </Grid>
                 <Divider sx={{
-                    borderColor: "#090081",
+                    borderColor: "#9c0a51",
                 }} />
                 <Typography textAlign="center" color={'white'} pt={{ xs: 1, sm: 2 }}>Copyright &copy; {new Date().getFullYear()} Gazal Capital  |
                     <Link href="/credits" color="inherit" underline="hover" >

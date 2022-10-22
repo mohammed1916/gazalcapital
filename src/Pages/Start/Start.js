@@ -1,10 +1,8 @@
 import ResponsiveAppBar from '../../Components/Navbar/ResponsiveAppBar';
-import MainAppBar from '../../Components/Navbar/MainAppBar';
 import Home from '../../Components/Home/Home';
-import Products from '../../Components/Products/Products';
 import ScrollNavBar from '../../Components/Navbar/ScrollNavBar';
-import { styled } from '@mui/material/styles';
 import Form from '../../Components/Forms/Form';
+import PinkBrand from '../../Components/Home/PinkBrand';
 
 
 export default function Start() {
@@ -13,6 +11,7 @@ export default function Start() {
             <ResponsiveAppBar />
             <ScrollNavBar />
             <Home />
+            <PinkBrand />
             <Form />
         </>
     );

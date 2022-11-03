@@ -1,13 +1,58 @@
 
 import * as React from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { colors } from '../../store/pages.js';
+
+import { getDatabase, ref, set, push, child, get } from "firebase/database";
+import { app, database } from '../../firebase-config.js';
 /* fontSize={{ xs: '20px', sm: '26px', md: '34px', lg: '46px' }} */
-
-
+// TODO: firebase
 export default function Form() {
+    const [fname, setFname] = useState("");
+    const [lname, setLname] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [address, setAddress] = useState("");
+    const [query, setQuery] = useState("");
+
+    // const handleChange = (e) => {
+    //     setTitle(e.target.value);
+    // };
+
+    const addTodo = () => {
+        const formRef = ref(db, "/Form");
+        const form = {
+            fname,
+            done: false,
+        };
+        push(formRef, form);
+    };
+    // const db = database;
+    const db = getDatabase();
+
+
+    const update = (e) => {
+        e.preventDefault();
+        try {
+            set(ref(db, `/Form/${new Date().toUTCString()}`), {
+                time: new Date().toLocaleString(),
+                fname: fname,
+                lname: lname,
+                phone: phone,
+                email: email,
+                address: address,
+                message: query,
+            });
+            console.log(fname);
+        } catch (e) {
+            alert(e.message);
+            return;
+        }
+        alert("Submitted details successfully");
+    }
 
 
     var s = window.location.pathname.split('/');
@@ -33,8 +78,11 @@ export default function Form() {
                         <hr color={'black'} bgcolor={'black'} /> */}
                         <div className="flex items-center justify-center p-12">
                             <div className="mx-auto w-full max-w-[550px]">
-                                <form method="post"
-                                    action="https://formsubmit.co/65a91a5e604fdb62c49d62a810ee2b35">
+                                {/** -----------  Form --------- */}
+                                <form
+                                // method="post"
+                                // action="https://formsubmit.co/65a91a5e604fdb62c49d62a810ee2b35"
+                                >
                                     <div className="-mx-3 flex flex-wrap">
                                         <div className="w-full px-3 sm:w-1/2">
                                             <div className="mb-5">
@@ -50,6 +98,10 @@ export default function Form() {
                                                     id="fName"
                                                     placeholder="First Name"
                                                     className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                                    onChange={(data) => {
+                                                        setFname(data.target.value);
+                                                        console.log("setFname", fname);
+                                                    }}
                                                 />
                                             </div>
                                         </div>
@@ -67,6 +119,10 @@ export default function Form() {
                                                     id="lName"
                                                     placeholder="Last Name"
                                                     className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                                    onChange={(data) => {
+                                                        setLname(data.target.value);
+                                                        console.log("setLname", lname);
+                                                    }}
                                                 />
                                             </div>
                                         </div>
@@ -84,6 +140,10 @@ export default function Form() {
                                             id="phone"
                                             placeholder="Enter your phone number"
                                             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                            onChange={(data) => {
+                                                setPhone(data.target.value);
+                                                console.log("setPhone", phone);
+                                            }}
                                         />
                                     </div>
                                     <div className="mb-5">
@@ -99,6 +159,10 @@ export default function Form() {
                                             id="email"
                                             placeholder="Enter your email"
                                             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                            onChange={(data) => {
+                                                setEmail(data.target.value);
+                                                console.log("setEmail", email);
+                                            }}
                                         />
                                     </div>
                                     <div className="mb-5">
@@ -114,6 +178,10 @@ export default function Form() {
                                             id="address"
                                             placeholder="Enter your delivery address"
                                             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                            onChange={(data) => {
+                                                setAddress(data.target.value);
+                                                console.log("setAddress", address);
+                                            }}
                                         />
                                     </div>
                                     <div className="mb-5">
@@ -129,28 +197,18 @@ export default function Form() {
                                             id="message"
                                             placeholder="Enter your query"
                                             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-b-yellow-500 focus:border-[#ce9f13] focus:shadow-md"
+                                            onChange={(data) => {
+                                                setQuery(data.target.value);
+                                                console.log("setQuery", query);
+                                            }}
                                         />
                                     </div>
                                     <Box color={colorsObj}>
-                                        <button type="submit" className="font-extrabold text-2xl bg-slate-700 p-3 rounded-lg transition delay-100 hover:-translate-y-1 hover:bg-slate-900 duration-300">
+                                        <button onClick={(e) => update(e)} className="font-extrabold text-2xl bg-slate-700 p-3 rounded-lg transition delay-100 hover:-translate-y-1 hover:bg-slate-900 duration-300">
                                             Submit
                                         </button>
                                     </Box>
                                 </form>
-                                {/* <form method="post" onSubmit={handleSubmit} ref={formRef} name="google-sheet">
-                                    <div className="form-style">
-                                        <input type="" name="name" placeholder='Your Name *' />
-                                    </div>
-                                    <div className="form-style">
-                                        <input type="email" name="email" placeholder='Your Email *' />
-                                    </div>
-                                    <div className="form-style">
-                                        <input type="number" name="phone" placeholder='Your Phone *' />
-                                    </div>
-                                    <div className="form-style">
-                                        <input type="submit" name="submit" value="Login" />
-                                    </div>
-                                </form> */}
                             </div>
                         </div>
                     </Box>

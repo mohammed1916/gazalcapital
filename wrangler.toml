@@ -1,0 +1,10 @@
+name = "gazalcapital"
+compatibility_date = "2022-11-02"
+
+account_id = "7e6eaae9278a2a93371f11caa043d9fd"
+
+[vars]
+AIRTABLE_BASE_ID = "app2QSQztuR9necgG"
+AIRTABLE_TABLE_NAME = "Queries"
+AIRTABLE_API_KEY = "keyJJKLmAF08HRpH1"
+FORM_URL = "https://gazalcapital.pages.dev"

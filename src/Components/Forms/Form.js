@@ -34,7 +34,7 @@ export default function Form() {
                         <div className="flex items-center justify-center p-12">
                             <div className="mx-auto w-full max-w-[550px]">
                                 <form method="post"
-                                    action="https://formsubmit.co/65a91a5e604fdb62c49d62a810ee2b35">
+                                    action="https://form.gazalcapital.workers.dev/submit">
                                     <div className="-mx-3 flex flex-wrap">
                                         <div className="w-full px-3 sm:w-1/2">
                                             <div className="mb-5">

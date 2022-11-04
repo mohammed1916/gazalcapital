@@ -23,7 +23,7 @@ body {
   border-width: 5px;
 }
 .gradient-box-purple {
-  border-image-source: linear-gradient(to right, #79043c, #FF88AA ,#d53a9d);
+  border-image-source: linear-gradient(to bottom, #79043c, #FF88AA ,#be318b);
 }
 
 /** Border Gradient Side*/
@@ -37,4 +37,8 @@ body {
       #a92e7c, 
       rgba(0, 0, 0, 0)
     ) 100 20%;
+}
+
+.bg-image{
+  background-image: url("img/Assets/redSquare.png");
 }

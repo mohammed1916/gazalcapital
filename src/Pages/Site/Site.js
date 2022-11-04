@@ -24,7 +24,7 @@ export default function Site() {
 
     return (
         <>
-            <Box className="bg-gray-100">
+            <Box className="bg-image">
                 <ResponsiveAppBar />
                 <Box bgcolor={'#59032d'} padding={'10px'} boxShadow={5}>
                     <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} fontWeight='bold' variant={'h3'} color={'white'} pt={{ xs: 0.5, sm: 1 }}>{siteName}</Typography>
@@ -35,7 +35,7 @@ export default function Site() {
                         {(typeof (carousal[siteURLName]) !== 'undefined')
                             ?
                             <div>
-                                <div className=" bg-white mt-6 border-4 gradient-box gradient-box-purple" >
+                                <div className=" bg-white mt-6 border-4 gradient-box gradient-box-purple shadow-2xl" >
                                     <Carousal />
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ export default function Site() {
                         {(typeof (brocher["brocher"][siteURLName]) !== 'undefined')
                             ?
                             <div className="max-w-2xl mx-auto pt-16 pb-3 sm:pt-24 sm:pb-5 lg:pt-32 lg:pb-7 lg:max-w-none">
-                                <h2 className="text-5xl font-extrabold text-gray-900 text-center">Specifications</h2>
+                                <h2 className="text-5xl font-extrabold text-white text-center">Specifications</h2>
                             </div>
                             :
                             <div>
@@ -83,7 +83,7 @@ export default function Site() {
                         }
                         {(typeof (brocher["brocher"][siteURLName]) !== 'undefined')
                             ?
-                            <div className="max-w-2xl mx-auto lg:max-w-none module rounded-3xl">
+                            <div className="max-w-2xl mx-auto lg:max-w-none module rounded-xl shadow-2xl">
                                 {brocher["brocher"][siteURLName].map((cardImg, index) => (
                                     <div key={cardImg}>
                                         <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">

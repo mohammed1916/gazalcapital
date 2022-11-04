@@ -4,10 +4,13 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import Collapse from '@mui/material/Collapse';
+import CloseIcon from '@mui/icons-material/Close';
 import { colors } from '../../store/pages.js';
 
 import { getDatabase, ref, set, push, child, get } from "firebase/database";
 import { app, database } from '../../firebase-config.js';
+import { Alert, AlertTitle, IconButton } from '@mui/material';
 // TODO: redirect on submit
 export default function Form({ order }) {
     const [fname, setFname] = useState("");
@@ -42,7 +45,7 @@ export default function Form({ order }) {
             return;
         }
         setsubmitConfirmation(true)
-        alert("Submitted details successfully");
+        alert(order ? "Order Placed" : "Successfully Submitted");
     }
 
 
@@ -61,7 +64,7 @@ export default function Form({ order }) {
                 <Container sx={{ width: '100%' }}>
                     <Box className="rounded-2xl" display={'flex'} flexDirection={'column'} flexWrap={'wrap'} alignItems={'center'} justifyContent='center' margin={'10px'} boxShadow={5} padding={{ xs: 1, sm: 2 }} bgcolor={'white'}>
                         <div >
-                            <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'sans-serif'} fontWeight={'bold'} color={colorsObj} variant="h3" pt={{ xs: 1, sm: 2 }}>Contact Us</Typography>
+                            <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'sans-serif'} fontWeight={'bold'} color={colorsObj} variant="h3" pt={{ xs: 1, sm: 2 }}>{order ? "PLACE ORDER" : "Contact Us"}</Typography>
 
                         </div>
                         {/* <div sx={{ bgcolor: 'black', width: '75%', margin: '5px' }} >
@@ -194,7 +197,25 @@ export default function Form({ order }) {
                                             }}
                                         />
                                     </div>
-                                    <Box color={colorsObj}>
+                                    {
+                                        submitConfirmation ? <Collapse in={submitConfirmation}><Alert severity="success"
+                                            action={
+                                                <IconButton
+                                                    aria-label="close"
+                                                    color="inherit"
+                                                    size="small"
+                                                    onClick={() => {
+                                                        setsubmitConfirmation(false);
+                                                    }}
+                                                >
+                                                    <CloseIcon fontSize="inherit" />
+                                                </IconButton>
+                                            } margin={"10px"}>
+                                            <AlertTitle >SUCCESS</AlertTitle>
+                                            {order ? "Order Placed" : "Successfully Submitted"}— <strong>We will reach out to you as soon as possible!</strong>
+                                        </Alert> </Collapse> : <div></div>
+                                    }
+                                    <Box color={colorsObj} marginTop={"15px"}>
                                         <button onClick={(e) => update(e)} className="font-extrabold text-2xl bg-slate-700 p-3 rounded-lg transition delay-100 hover:-translate-y-1 hover:bg-slate-900 duration-300">
                                             {order ? "ORDER NOW" : "SUBMIT"}
                                         </button>

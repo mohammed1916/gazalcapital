@@ -6,6 +6,7 @@ import { brocher } from '../../store/brochers.js'
 import { carousal } from '../../store/carousal.js'
 import Carousal from '../../Components/Carousal/Carousal';
 import ResponsiveAppBar from '../../Components/Navbar/ResponsiveAppBar';
+import Form from '../../Components/Forms/Form.js';
 
 
 function getURLUsername(siteName) {
@@ -23,16 +24,20 @@ export default function Site() {
 
     return (
         <>
-            <Box bgcolor={'#59032d'}>
+            <Box className="bg-gray-100">
                 <ResponsiveAppBar />
-                <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} fontWeight='bold' variant={'h3'} color={'white'} pt={{ xs: 0.5, sm: 1 }}>{siteName}</Typography>
-                <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} variant={'h5'} color={'white'} pt={{ xs: 0.5, sm: 2 }}>Product Overview</Typography>
-                <div className="bg-gray-100">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <Box bgcolor={'#59032d'} padding={'10px'} boxShadow={5}>
+                    <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} fontWeight='bold' variant={'h3'} color={'white'} pt={{ xs: 0.5, sm: 1 }}>{siteName}</Typography>
+                    <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} variant={'h5'} color={'white'} pt={{ xs: 0.5, sm: 2 }}>Product Overview</Typography>
+                </Box>
+                <div >
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
                         {(typeof (carousal[siteURLName]) !== 'undefined')
                             ?
-                            <div className="mt-6 ">
-                                <Carousal />
+                            <div>
+                                <div className=" bg-white mt-6 border-4 gradient-box gradient-box-purple" >
+                                    <Carousal />
+                                </div>
                             </div>
                             :
                             <div>
@@ -78,7 +83,7 @@ export default function Site() {
                         }
                         {(typeof (brocher["brocher"][siteURLName]) !== 'undefined')
                             ?
-                            <div className="max-w-2xl mx-auto py-16 sm:py-24 lg:py-32 lg:max-w-none">
+                            <div className="max-w-2xl mx-auto lg:max-w-none module rounded-3xl">
                                 {brocher["brocher"][siteURLName].map((cardImg, index) => (
                                     <div key={cardImg}>
                                         <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
@@ -95,6 +100,7 @@ export default function Site() {
                             <div>
                             </div>
                         }
+                        <Form order={true} />
                     </div>
                 </div>
             </Box>

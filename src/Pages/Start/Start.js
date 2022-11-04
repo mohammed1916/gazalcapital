@@ -12,7 +12,7 @@ export default function Start() {
             <ScrollNavBar />
             <Home />
             <PinkBrand />
-            <Form />
+            <Form order={false} />
         </>
     );
 }

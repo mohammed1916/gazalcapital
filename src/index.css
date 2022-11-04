@@ -10,3 +10,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/** Border Gradient*/
+.gradient-box {
+  position: relative;
+  padding: 1% 1em;
+  box-sizing: border-box;
+
+  color:white;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+}
+.gradient-box-purple {
+  border-image-source: linear-gradient(to right, #79043c, #FF88AA ,#d53a9d);
+}
+
+/** Border Gradient Side*/
+.module {
+  color: white;
+  border-width: 3px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      #d53a9d, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+}

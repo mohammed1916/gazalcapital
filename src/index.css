@@ -34,7 +34,7 @@ body {
   border-image: 
     linear-gradient(
       to bottom, 
-      #d53a9d, 
+      #a92e7c, 
       rgba(0, 0, 0, 0)
-    ) 1 100%;
+    ) 100 20%;
 }

@@ -83,7 +83,7 @@ export default function Site() {
                         }
                         {(typeof (brocher["brocher"][siteURLName]) !== 'undefined')
                             ?
-                            <div className="max-w-2xl mx-auto py-16 sm:py-24 lg:py-32 lg:max-w-none ">
+                            <div className="max-w-2xl mx-auto lg:max-w-none module rounded-3xl">
                                 {brocher["brocher"][siteURLName].map((cardImg, index) => (
                                     <div key={cardImg}>
                                         <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">

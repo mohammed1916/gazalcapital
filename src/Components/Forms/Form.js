@@ -8,9 +8,8 @@ import { colors } from '../../store/pages.js';
 
 import { getDatabase, ref, set, push, child, get } from "firebase/database";
 import { app, database } from '../../firebase-config.js';
-/* fontSize={{ xs: '20px', sm: '26px', md: '34px', lg: '46px' }} */
-// TODO: firebase
-export default function Form() {
+// TODO: redirect on submit
+export default function Form({ order }) {
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
     const [phone, setPhone] = useState("");
@@ -18,18 +17,8 @@ export default function Form() {
     const [address, setAddress] = useState("");
     const [query, setQuery] = useState("");
 
-    // const handleChange = (e) => {
-    //     setTitle(e.target.value);
-    // };
+    const [submitConfirmation, setsubmitConfirmation] = useState(false);
 
-    const addTodo = () => {
-        const formRef = ref(db, "/Form");
-        const form = {
-            fname,
-            done: false,
-        };
-        push(formRef, form);
-    };
     // const db = database;
     const db = getDatabase();
 
@@ -39,6 +28,7 @@ export default function Form() {
         try {
             set(ref(db, `/Form/${new Date().toUTCString()}`), {
                 time: new Date().toLocaleString(),
+                order: order,
                 fname: fname,
                 lname: lname,
                 phone: phone,
@@ -51,6 +41,7 @@ export default function Form() {
             alert(e.message);
             return;
         }
+        setsubmitConfirmation(true)
         alert("Submitted details successfully");
     }
 
@@ -66,9 +57,9 @@ export default function Form() {
             <Box
                 mx={{ xs: 3, sm: 10 }}
                 my={{ xs: 2, sm: 5 }}
-                bgcolor={'white'}>
+            >
                 <Container sx={{ width: '100%' }}>
-                    <Box className="rounded-2xl" display={'flex'} flexDirection={'column'} flexWrap={'wrap'} alignItems={'center'} justifyContent='center' margin={'10px'} boxShadow={5} padding={{ xs: 1, sm: 2 }} >
+                    <Box className="rounded-2xl" display={'flex'} flexDirection={'column'} flexWrap={'wrap'} alignItems={'center'} justifyContent='center' margin={'10px'} boxShadow={5} padding={{ xs: 1, sm: 2 }} bgcolor={'white'}>
                         <div >
                             <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'sans-serif'} fontWeight={'bold'} color={colorsObj} variant="h3" pt={{ xs: 1, sm: 2 }}>Contact Us</Typography>
 
@@ -205,7 +196,7 @@ export default function Form() {
                                     </div>
                                     <Box color={colorsObj}>
                                         <button onClick={(e) => update(e)} className="font-extrabold text-2xl bg-slate-700 p-3 rounded-lg transition delay-100 hover:-translate-y-1 hover:bg-slate-900 duration-300">
-                                            Submit
+                                            {order ? "ORDER NOW" : "SUBMIT"}
                                         </button>
                                     </Box>
                                 </form>

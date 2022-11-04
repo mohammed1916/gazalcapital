@@ -32,7 +32,7 @@ export default function CarousalComponent(props) {
         <>
             {(typeof (data) !== 'undefined')
                 ?
-                <section className="flex justify-center p-6">
+                <section className="flex justify-center p-1">
                     <Box sx={{ maxWidth: props.maxWidth }}>
                         <Paper
                             square

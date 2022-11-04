@@ -61,7 +61,7 @@ export default function Form({ order }) {
                 <Container sx={{ width: '100%' }}>
                     <Box className="rounded-2xl" display={'flex'} flexDirection={'column'} flexWrap={'wrap'} alignItems={'center'} justifyContent='center' margin={'10px'} boxShadow={5} padding={{ xs: 1, sm: 2 }} bgcolor={'white'}>
                         <div >
-                            <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'sans-serif'} fontWeight={'bold'} color={colorsObj} variant="h3" pt={{ xs: 1, sm: 2 }}>Contact Us</Typography>
+                            <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'sans-serif'} fontWeight={'bold'} color={colorsObj} variant="h3" pt={{ xs: 1, sm: 2 }}>{order ? "PLACE ORDER" : "Contact Us"}</Typography>
 
                         </div>
                         {/* <div sx={{ bgcolor: 'black', width: '75%', margin: '5px' }} >

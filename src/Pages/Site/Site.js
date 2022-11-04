@@ -6,6 +6,7 @@ import { brocher } from '../../store/brochers.js'
 import { carousal } from '../../store/carousal.js'
 import Carousal from '../../Components/Carousal/Carousal';
 import ResponsiveAppBar from '../../Components/Navbar/ResponsiveAppBar';
+import Form from '../../Components/Forms/Form.js';
 
 
 function getURLUsername(siteName) {
@@ -95,6 +96,7 @@ export default function Site() {
                             <div>
                             </div>
                         }
+                        <Form order={true} />
                     </div>
                 </div>
             </Box>

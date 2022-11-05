@@ -13,14 +13,13 @@ export default function Home() {
                 bgcolor={'#333333'}
                 color={'white'}
                 height={'90vh'} >
-                <Container sx={{ width: '100%' }}>
-                    <Box className="rounded-2xl" display={'flex'} flexDirection={'column'} flexWrap={'wrap'} alignItems={'center'} justifyContent='center' margin={'10px'} boxShadow={5} padding={{ xs: 1, sm: 2 }} bgcolor={'#000'}>
+                <Container className='w-full'>
+                    <Box className="mt-8 rounded-t-2xl flex flex-col flex-wrap justify-center" boxShadow={5} padding={{ xs: 1, lg: 2 }} paddingBottom={'30px'} bgcolor={'#000'}>
                         <Box className='rounded-2xl' boxShadow={5} alignSelf={'center'} sx={{ height: "20rem" }} component={'img'} src={decoration} />
-                        <Box display={'flex'} flexDirection={'column'} alignSelf={'center'} padding={{ xs: 3, sm: 5 }} >
-                            <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'sans-serif'} fontWeight={'bold'} color={'#ffb006'} variant="h3" pt={{ xs: 1, sm: 2 }}>Gazal Capital</Typography>
-                            <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'Righteous'} variant="h6" pt={{ xs: 1, sm: 2 }}>The Family Company</Typography>
-                            {/* <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'Righteous'} variant="p" pt={{ xs: 1, sm: 2 }}> </Typography> */}
-                        </Box>
+                        <Typography className='drop-shadow-xl' textAlign="center" fontWeight={'bold'} color={'#d5d47e'} fontFamily={'Be Vietnam Pro'} variant="h3" pt={{ xs: 1, sm: 2 }} paddingBottom={'30px'} >GAZAL CAPITAL</Typography>
+                    </Box>
+                    <Box className="rounded-b-2xl p-7 bg-white w-full">
+                        <Typography className='drop-shadow-xl text-gray-800 text-2xl font-sans' textAlign={'center'} fontFamily={'Be Vietnam Pro'} pt={{ xs: 1, sm: 2 }}>The Family Company</Typography>
                     </Box>
                 </Container>
             </Box>

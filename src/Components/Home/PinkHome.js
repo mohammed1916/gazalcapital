@@ -19,7 +19,6 @@ export default function PinkHome() {
                         <Box display={'flex'} flexDirection={'column'} alignSelf={'center'} padding={{ xs: 3, sm: 5 }} >
                             <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'ZCOOL XiaoWei'} fontWeight='bold' variant="h6" pt={{ xs: 1, sm: 2 }}>Gazal Capital Presents</Typography>
                             <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'ZCOOL XiaoWei'} variant="h3" pt={{ xs: 1, sm: 2 }}>The Pink Dove</Typography>
-                            {/* <Typography className='drop-shadow-xl' textAlign="center" fontFamily={'Righteous'} variant="p" pt={{ xs: 1, sm: 2 }}> </Typography> */}
                         </Box>
                     </Box>
                 </Container>

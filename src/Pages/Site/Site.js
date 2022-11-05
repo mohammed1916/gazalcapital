@@ -24,7 +24,7 @@ export default function Site() {
 
     return (
         <>
-            <Box className="bg-image">
+            <Box >
                 <ResponsiveAppBar />
                 <Box bgcolor={'#59032d'} padding={'10px'} boxShadow={5}>
                     <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} fontWeight='bold' variant={'h3'} color={'white'} pt={{ xs: 0.5, sm: 1 }}>{siteName}</Typography>
@@ -75,7 +75,7 @@ export default function Site() {
                         {(typeof (brocher["brocher"][siteURLName]) !== 'undefined')
                             ?
                             <div className="max-w-2xl mx-auto pt-16 pb-3 sm:pt-24 sm:pb-5 lg:pt-32 lg:pb-7 lg:max-w-none">
-                                <h2 className="text-5xl font-extrabold text-white text-center">Specifications</h2>
+                                <h2 className="text-5xl font-extrabold text-pink-900 text-center">Specifications</h2>
                             </div>
                             :
                             <div>

@@ -31,7 +31,7 @@ export default function Products() {
                 <Container sx={{ width: '100%' }}>
                     <Typography textAlign="center" fontFamily={'ZCOOL XiaoWei'} fontWeight='bold' fontSize={'36px'} color={'#white'} pt={{ xs: 1, sm: 2 }} pb={{ xs: 1, sm: 2 }}>OUR PRODUCTS</Typography>
                     {/* <Typography textAlign="center" fontFamily={'Righteous'} fontSize={'44px'} color={'#ddd'} pt={{ xs: 1, sm: 2 }}>Completed</Typography> */}
-                    <Box display={'flex'} flexWrap={'wrap'} bgcolor={'#000'} justifyContent='space-evenly' borderRadius={'20px'} padding={'30px'} boxShadow={'0px 2px 30px #c30164,0px 5px 10px rgba(0,0,0)'}>
+                    <Box display={'flex'} flexWrap={'wrap'} bgcolor={'#3b041c'} justifyContent='space-evenly' borderRadius={'20px'} padding={'30px'} boxShadow={'0px 2px 30px #c30164,0px 5px 10px rgba(0,0,0)'}>
                         {cards.map((cardImg, index) => (
                             <Card key={cardImg + index} sx={{ maxWidth: 310, padding: '10px', margin: '20px', ":hover": "boxShadow: 0 15px 70px -12px rgba(0,0,0,0.3)", boxShadow: 6 }} onClick={() => nav(cardName[index])} className="transition ease-in-out delay-150 hover:-translate-y-3 hover:scale-110 hover:bg-pink-900 hover:shadow-pink-900 hover:text-white duration-[2500]">
                                 <CardActionArea>
